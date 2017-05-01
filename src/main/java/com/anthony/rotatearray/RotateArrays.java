@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by anthonyjones on 5/1/17.
  */
-public class RotateArrays extends List {
+public class RotateArrays extends ArrayList {
 
     ArrayList<Integer> list = new ArrayList<Integer>(7);
 
@@ -32,8 +32,6 @@ public class RotateArrays extends List {
             list.set(i, j);
         }
         System.out.println(list);
-
-
     }
 
 
