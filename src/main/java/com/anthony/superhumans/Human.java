@@ -9,6 +9,9 @@ public class Human {
     String gender;
     String occupation;
     String address;
+    String goodOrBad;
+    String heroName;
+    String superAbilities;
     int age;
 
 
@@ -41,6 +44,14 @@ public class Human {
     }
 
     public String getGoodOrBad() {
-        return "";
+        return goodOrBad;
+    }
+
+    public String getSuperAbility() {
+        return superAbilities;
+    }
+
+    public String getHeroName() {
+        return heroName;
     }
 }

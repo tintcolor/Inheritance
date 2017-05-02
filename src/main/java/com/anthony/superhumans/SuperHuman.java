@@ -5,19 +5,35 @@ package com.anthony.superhumans;
  */
 public class SuperHuman extends Human {
 
-    String goodOrBad;
-    String heroName;
-    String superAbility;
+    private String goodOrBad;
+    private String heroName;
+    private String superAbility;
 
 
-    SuperHuman(String name, String gender, String occupation, String address, int age, String goodOrBad, String heroName, String superAbility){
-        super(name,gender,occupation,address,age);
-        this.goodOrBad=goodOrBad;
-        this.heroName=heroName;
-        this.superAbility=superAbility;
+    SuperHuman(String name, String gender, String occupation, String address, int age, String goodOrBad, String heroName, String superAbility) {
+        super(name, gender, occupation, address, age);
+        this.goodOrBad = goodOrBad;
+        this.heroName = heroName;
+        this.superAbility = superAbility;
     }
 
     public void setGoodOrBad(String goodOrBad) {
         this.goodOrBad = goodOrBad;
     }
+
+    @Override
+    public String getGoodOrBad() {
+        return goodOrBad;
+    }
+
+    @Override
+    public String getHeroName() {
+        return heroName;
+    }
+
+    @Override
+    public String getSuperAbility() {
+        return superAbility;
+    }
 }
+
