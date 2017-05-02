@@ -3,7 +3,7 @@ package com.anthony.classmanager;
 /**
  * Created by anthonyjones on 5/1/17.
  */
-public class Shampoo extends Product {
+public class Shampoo {
 
     private double price;
 
@@ -13,8 +13,17 @@ public class Shampoo extends Product {
 
     private String name;
 
+    public Shampoo() {
+
+    }
+
     public Shampoo(String name, double price, int id, int quantity) {
-        super(name, price, id, quantity);
+        this.quantity = quantity;
+        this.name = name;
+        this.id = id;
+        this.price = price;
+
+
     }
 
     public double getPrice() {

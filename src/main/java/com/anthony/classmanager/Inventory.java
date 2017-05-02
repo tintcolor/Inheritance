@@ -6,14 +6,26 @@ package com.anthony.classmanager;
 public class Inventory {
 
     static double inventorySum;
+    double finalSum;
 
-    Product[] products = new Product[3];
-    products[0] = new Shampoo;
+    Product[] products;
 
-    public double calcShampoo(Product products) {
-        double finalSum = products.getQuantity() * products.getPrice();
+
+    public double calcProduct(Shampoo products) {
+        finalSum = products.getQuantity() * products.getPrice();
         return finalSum;
     }
+
+    Inventory(Shampoo shampoo) {
+
+        double sum = calcProduct(shampoo);
+
+        System.out.println(sum);
+        //System.out.println(finalSum);
+    }
+//    Inventory(){
+//        products[0] = new Shampoo();
+//    }
 
 
 }

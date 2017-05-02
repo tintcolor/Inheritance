@@ -3,7 +3,7 @@ package com.anthony.classmanager;
 /**
  * Created by anthonyjones on 5/1/17.
  */
-public class Product extends Inventory {
+public class Product  {
 
     private double price;
 
@@ -12,6 +12,12 @@ public class Product extends Inventory {
     private int quantity;
 
     private String name;
+
+
+
+    public Product() {
+
+    }
 
     public Product(String name, double price, int id, int quantity) {
         this.price = price;

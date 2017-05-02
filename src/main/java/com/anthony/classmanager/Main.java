@@ -10,14 +10,25 @@ public class Main {
 
         Inventory[] inventories = new Inventory[3];
 
-        inventories[0] = new Product("Shampoo",3.45, 2, 5);
-        inventories[1] = new Product("Socks",1.45, 3, 50);
-        inventories[2] = new Product("Chairs",17.15, 4, 8);
+
+        // inventories[0] = new Product(new Shampoo("Shampoo",3.43,2,65));
+        //inventories[1] = new Product("Socks", 1.45, 3, 50);
+        // inventories[2] = new Product("Chairs", 17.15, 4, 8);
+        // inventories[0] = new Shampoo("Shampoo", 3.43, 20, 65);
 
 
-        for(Inventory thingsWeHaveInStock: inventories){
+        inventories[0] = new Inventory(new Shampoo("Shampoo", 3.43, 20, 65));
+        Shampoo shampoo = new Shampoo("Shampoo", 3.43, 20, 65);
 
-            System.out.println(thingsWeHaveInStock.products.);
+        // System.out.println(inventories[0]);
+
+        System.out.println(shampoo.getPrice());
+
+        System.out.println(inventories[0].calcProduct(shampoo));
+
+
+        for (Inventory thingsWeHaveInStock : inventories) {
+//            System.out.println(thingsWeHaveInStock.products.);
 
         }
 
