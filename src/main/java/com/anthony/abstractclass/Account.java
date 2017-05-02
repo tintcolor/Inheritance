@@ -7,20 +7,18 @@ public abstract class Account {
 
 
     private double currentBalance;
-    private double incomingDeposit;
-    private double outgoingDeposit;
+    private double deposit;
+    private double deduction;
     private String accountHolderName;
 
     CalcBalance calcBalance = new CalcBalance();
 
 
-
-    Account(String accountHolderName, double currentBalance, double incomingDeposit){
+    Account(String accountHolderName, double currentBalance) {
         this.accountHolderName = accountHolderName;
         this.currentBalance = currentBalance;
-        this.incomingDeposit = incomingDeposit;
-        calcBalance.calcIncomingDeposit(incomingDeposit,currentBalance);
-        calcBalance.calcWithdrawal(outgoingDeposit, currentBalance);
+        calcBalance.calcIncomingDeposit(deduction, currentBalance);
+        calcBalance.calcWithdrawal(deposit, currentBalance);
     }
 
 
@@ -32,20 +30,20 @@ public abstract class Account {
         this.currentBalance = currentBalance;
     }
 
-    public double getIncomingDeposit() {
-        return incomingDeposit;
+    public double getDeposit() {
+        return deposit;
     }
 
-    public void setIncomingDeposit(double incomingDeposit) {
-        this.incomingDeposit = incomingDeposit;
+    public void setDeposit(double deposit) {
+        this.deposit = deposit;
     }
 
-    public double getOutgoingDeposit() {
-        return outgoingDeposit;
+    public double getDeduction() {
+        return deduction;
     }
 
-    public void setOutgoingDeposit(double outgoingDeposit) {
-        this.outgoingDeposit = outgoingDeposit;
+    public void setDeduction(double deduction) {
+        this.deduction = deduction;
     }
 
     public String getAccountHolderName() {
@@ -55,7 +53,6 @@ public abstract class Account {
     public void setAccountHolderName(String accountHolderName) {
         this.accountHolderName = accountHolderName;
     }
-
 
 
 }

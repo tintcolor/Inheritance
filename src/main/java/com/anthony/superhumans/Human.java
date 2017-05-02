@@ -5,14 +5,14 @@ package com.anthony.superhumans;
  */
 public class Human {
 
-    String name;
-    String gender;
-    String occupation;
-    String address;
+    private String name;
+    private String gender;
+    private String occupation;
+    private String address;
     String goodOrBad;
     String heroName;
     String superAbilities;
-    int age;
+    private int age;
 
 
     Human(String name, String gender, String occupation, String address, int age) {

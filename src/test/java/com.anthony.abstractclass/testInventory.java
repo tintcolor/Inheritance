@@ -1,6 +1,7 @@
 package com.anthony.abstractclass;
 
 import com.anthony.classmanager.Inventory;
+import com.anthony.classmanager.Product;
 import com.anthony.classmanager.Shampoo;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,6 +11,19 @@ import org.junit.Test;
  */
 public class testInventory {
 
+    @Test
+    public void testCalcSumOfProduct() {
+        //given
+        Product randomProduct = new Product("Shampoo", 4.54, 1, 5);
+        double expectedSum = 22.70;
+        Inventory inventory = new Inventory();
+        // inventory.calcProduct(randomProduct);
 
+        //when
+        double actualSum = inventory.calcSumOfProduct(randomProduct);
+
+        //then
+        Assert.assertEquals(expectedSum, actualSum, .001);
+    }
 
 }
