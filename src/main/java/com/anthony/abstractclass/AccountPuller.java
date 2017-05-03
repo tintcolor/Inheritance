@@ -9,35 +9,34 @@ public class AccountPuller {
 
     // SavingsAccount sam = new SavingsAccount("Sam", 300.00);
 
+    static final double RANDOM = Math.floor(Math.random() * 4);//4
     ArrayList<SavingsAccount> savingsAccounts = new ArrayList<>();
     boolean startup = true;
     int arrayListPosition;
 
+    AccountPuller() {
+        savingsAccountList();
+    }
 
-    SavingsAccount savingsAccountList(int randomStaticNumber) {
+
+    void savingsAccountList() {
 
         savingsAccounts.add(new SavingsAccount("Sam", 300.00));
         savingsAccounts.add(new SavingsAccount("John", 8000.00));
         savingsAccounts.add(new SavingsAccount("Tariq", 54000.00));
         savingsAccounts.add(new SavingsAccount("Leon", 25.00));
+        arrayListPosition = (int) RANDOM;
 
-        int randomNumber = (int) Math.floor(Math.random() * 4);
-
-        arrayListPosition = randomNumber;
-        return savingsAccounts.get(randomNumber);
     }
 
 
-    void getSavingsAccountList(int randomStaticNumber) {
+    SavingsAccount getSavingsAccountList() {
 
-        savingsAccounts.get(2);
+        savingsAccounts.get((int) RANDOM);
 
 
-        System.out.println(savingsAccounts.size() + " size of arralist");
 
-        // System.out.println(randomNumber + " Arraylistposition");
-        //startup = false;
-
+        return savingsAccounts.get(arrayListPosition);
     }
 
 

@@ -5,7 +5,7 @@ package com.anthony.abstractclass;
  */
 public class AccountOptions {
     ScannerInput listOfOptions = new ScannerInput();
-   AccountManager accountManager = new AccountManager();
+    AccountManager accountManager = new AccountManager();
 
     void chooseSpecificAccount() {
         String choice = listOfOptions.in.nextLine();
@@ -15,7 +15,7 @@ public class AccountOptions {
                 break;
             case "2":
                 System.out.println("Savings Account");
-                accountManager.listOfSavingsAccounts();
+                accountManager.pullCurrentSavingsAccountInformation();
                 break;
             case "3":
                 System.out.println("Checking Account");
@@ -29,7 +29,7 @@ public class AccountOptions {
     }
 
 
-    void depositOrWithdraw(){
+    void depositOrWithdraw() {
         String choice = listOfOptions.in.nextLine();
 
         switch (choice) {

@@ -6,7 +6,7 @@ package com.anthony.abstractclass;
 public abstract class Account {
 
 
-    private static double currentBalance;
+    private  double currentBalance;
     private double deposit;
     private double deduction;
     private String accountHolderName;
