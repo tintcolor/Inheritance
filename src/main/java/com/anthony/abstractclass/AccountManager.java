@@ -4,7 +4,7 @@ package com.anthony.abstractclass;
 public class AccountManager {
     ScannerInput funds = new ScannerInput();
     //AccountOptions accountingOptions = new AccountOptions();
-    AccountPuller randomAccount = new AccountPuller();
+    AccountPuller accountPuller = new AccountPuller();
 
     // loop through a random list of accounts
 
@@ -15,11 +15,14 @@ public class AccountManager {
 
     //list everything you have in each account, get random account, and tells you what's in each account
     void listOfSavingsAccounts() {
+        //System.out.println(accountPuller.savingsAccountList(2).getCurrentBalance()+" This is the number random number should be");
+
+        SavingsAccount randomSavingsAccount = accountPuller.savingsAccountList(2);
+        System.out.println(accountPuller.savingsAccountList(2).getCurrentBalance());
 
 
-        SavingsAccount randomSavingsAccount =randomAccount.savingsAccountList();
 
-        System.out.println("Your current balance is " + randomSavingsAccount.getCurrentBalance());
+        System.out.println("Your current balance is " + accountPuller.savingsAccountList(1).getCurrentBalance());
         System.out.println();
         System.out.println("Would you like to Deposit or Withdraw?");
         // accountingOptions.depositOrWithdraw();

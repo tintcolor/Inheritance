@@ -8,7 +8,7 @@ public class ATM {
     AccountOptions accountOptions = new AccountOptions();
     AccountPuller randomAccount = new AccountPuller();
 
-    ATM(){
+    ATM() {
 
         System.out.println("Welcome to Anthony's Bank");
         System.out.println();
@@ -16,7 +16,13 @@ public class ATM {
 
         input.in.nextLine();
 
-        System.out.println("Welcome Back "+ randomAccount.savingsAccountList().getAccountHolderName()+", please choose which account you would like to manage");
+        String accountHolderName = randomAccount.savingsAccountList(1).getAccountHolderName();
+        String current = randomAccount.savingsAccountList(1).getAccountHolderName();
+
+
+        System.out.println("Welcome Back " +   ", please choose which account you would like to manage");
+
+
 
         System.out.println("1: Business Account");
         System.out.println("2: Savings Account");
