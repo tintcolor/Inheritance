@@ -35,4 +35,17 @@ public class testCalcBalance {
         //then
         Assert.assertEquals(expectedBalance,actualBalance,.0001);
     }
+
+    @Test
+    public void calcWithdrawalWithInsufficientFunds(){
+        //given
+        double deduction= 500.00;
+        double originalSum = 100.00;
+        CalcBalance calcBalance = new CalcBalance();
+        //when
+        double actualBalance = calcBalance.calcWithdrawal(deduction,originalSum);
+
+        //then
+        Assert.assertTrue(Double.isNaN(actualBalance));
+    }
 }

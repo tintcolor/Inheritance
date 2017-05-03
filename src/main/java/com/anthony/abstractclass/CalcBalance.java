@@ -11,7 +11,12 @@ public class CalcBalance {
 
     public double calcWithdrawal(double deduction, double originalSum) {
 
-        return originalSum - deduction;
+        if (deduction > originalSum) {
+            System.out.println("Insufficient Funds");
+            return originalSum;
+        } else {
+            return originalSum - deduction;
+        }
     }
 
 }

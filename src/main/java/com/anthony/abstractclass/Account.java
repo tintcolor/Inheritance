@@ -6,7 +6,7 @@ package com.anthony.abstractclass;
 public abstract class Account {
 
 
-    private  double currentBalance;
+    private double currentBalance;
     private double deposit;
     private double deduction;
     private String accountHolderName;
@@ -17,8 +17,6 @@ public abstract class Account {
     Account(String accountHolderName, double currentBalance) {
         this.accountHolderName = accountHolderName;
         this.currentBalance = currentBalance;
-        // calcBalance.calcDeposit(deduction, currentBalance);
-        // calcBalance.calcWithdrawal(deposit, currentBalance);
     }
 
 

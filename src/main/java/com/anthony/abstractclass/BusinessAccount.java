@@ -3,15 +3,16 @@ package com.anthony.abstractclass;
 /**
  * Created by anthonyjones on 5/1/17.
  */
-public class BusinessAccount {
+public class BusinessAccount extends Account {
 
     private double currentBalance;
     private double incomingDeposit;
     private double outgoingDeposit;
     private String accountHolderName;
 
-
-
+    BusinessAccount(String accountHolderName, double currentBalance) {
+        super(accountHolderName, currentBalance);
+    }
 
 
     public double getCurrentBalance() {
