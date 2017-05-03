@@ -17,23 +17,23 @@ public class AccountManager {
     void listOfSavingsAccounts() {
 
 
-        randomAccount.savingsAccountList();
+        SavingsAccount randomSavingsAccount =randomAccount.savingsAccountList();
 
-        System.out.println("Your current balance is " + sam.getCurrentBalance());
+        System.out.println("Your current balance is " + randomSavingsAccount.getCurrentBalance());
         System.out.println();
         System.out.println("Would you like to Deposit or Withdraw?");
         // accountingOptions.depositOrWithdraw();
 
         String depositSum = funds.in.nextLine();
-        sam.setCurrentBalance(sam.calcBalance.calcDeposit(Double.parseDouble(depositSum), sam.getCurrentBalance()));
+        randomSavingsAccount.setCurrentBalance(randomSavingsAccount.calcBalance.calcDeposit(Double.parseDouble(depositSum), randomSavingsAccount.getCurrentBalance()));
 
-        System.out.println("Current Balance " + sam.getCurrentBalance());
+        System.out.println("Current Balance " + randomSavingsAccount.getCurrentBalance());
 
         String deductSum = funds.in.nextLine();
 
-        sam.setCurrentBalance(sam.calcBalance.calcWithdrawal(Double.parseDouble(deductSum), sam.getCurrentBalance()));
+        randomSavingsAccount.setCurrentBalance(randomSavingsAccount.calcBalance.calcWithdrawal(Double.parseDouble(deductSum), randomSavingsAccount.getCurrentBalance()));
 
-        System.out.println("Current Balance " + sam.getCurrentBalance());
+        System.out.println("Current Balance " + randomSavingsAccount.getCurrentBalance());
 
     }
 }
