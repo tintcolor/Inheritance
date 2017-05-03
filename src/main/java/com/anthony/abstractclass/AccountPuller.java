@@ -13,7 +13,6 @@ public class AccountPuller {
     ArrayList<SavingsAccount> savingsAccounts = new ArrayList<>();
     ArrayList<BusinessAccount> businessAccounts = new ArrayList<>();
     ArrayList<CheckingAccount> checkingAccounts = new ArrayList<>();
-    boolean startup = true;
     int arrayListPosition;
 
     AccountPuller() {

@@ -6,7 +6,7 @@ package com.anthony.abstractclass;
 public class ATM {
     ScannerInput input = new ScannerInput();
     AccountOptions accountOptions = new AccountOptions();
-    AccountPuller randomAccount = new AccountPuller();
+   // AccountPuller randomAccount = new AccountPuller();
     final String currentAccountName;
     final double currentAccountBalance;
     CurrentAccountInfo currentAccountInfo = new CurrentAccountInfo();

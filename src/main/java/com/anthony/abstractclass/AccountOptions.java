@@ -30,22 +30,4 @@ public class AccountOptions {
 
     }
 
-
-    void depositOrWithdraw() {
-        String choice = listOfOptions.in.nextLine();
-
-        switch (choice) {
-            case "1":
-                System.out.println("Deposit");
-                break;
-            case "2":
-                System.out.println("Withdraw");
-                break;
-            default:
-                System.out.println("Please Choose an account from the List");
-                chooseSpecificAccount();
-                break;
-        }
-    }
-
 }
