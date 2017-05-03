@@ -16,7 +16,7 @@ public class testCalcBalance {
         double expectedBalance = 150.00;
         CalcBalance calcBalance = new CalcBalance();
         //when
-        double actualBalance = calcBalance.calcIncomingDeposit(newDeposit,originalSum);
+        double actualBalance = calcBalance.calcDeposit(newDeposit,originalSum);
 
         //then
         Assert.assertEquals(expectedBalance,actualBalance,.0001);

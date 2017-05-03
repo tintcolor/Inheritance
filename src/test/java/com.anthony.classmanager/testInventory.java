@@ -1,8 +1,7 @@
-package com.anthony.abstractclass;
+package com.anthony.classmanager;
 
 import com.anthony.classmanager.Inventory;
 import com.anthony.classmanager.Product;
-import com.anthony.classmanager.Shampoo;
 import org.junit.Assert;
 import org.junit.Test;
 

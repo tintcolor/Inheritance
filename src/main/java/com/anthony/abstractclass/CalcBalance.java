@@ -5,11 +5,12 @@ package com.anthony.abstractclass;
  */
 public class CalcBalance {
 
-    public double calcIncomingDeposit(double newDeposit, double originalSum) {
+    public double calcDeposit(double newDeposit, double originalSum) {
         return newDeposit + originalSum;
     }
 
     public double calcWithdrawal(double deduction, double originalSum) {
+
         return originalSum - deduction;
     }
 
