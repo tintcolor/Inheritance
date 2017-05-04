@@ -9,22 +9,21 @@ import java.util.Scanner;
 public class PetQuestionnaire {
 
 
-    public static void main(String[] args) {
+    Pet cat = new Cat();
+    Pet dog = new Dog();
+    Pet pet = new Pet();
+    Pet fish = new Fish();
+    Scanner in = new Scanner(System.in);
+    ArrayList<String> whatKindOfPet = new ArrayList<>();
+    ArrayList<String> petSpeak = new ArrayList<>();
+    ArrayList<String> petName = new ArrayList<>();
+    boolean hasMoreThanOnePet = false;
 
-
-        Scanner in = new Scanner(System.in);
-        ArrayList<String> whatKindOfPet = new ArrayList<>();
-        ArrayList<String> petName = new ArrayList<>();
-        boolean hasMoreThanOnePet = false;
+    PetQuestionnaire() {
         System.out.println("How many pets do you own?");
         String howManyPets = in.nextLine();
         System.out.println(howManyPets);
-        Pet cat = new Cat();
-        Pet dog = new Dog();
-        Pet fish = new Fish();
-        String petSpeak="";
-
-        System.out.println(cat.getClass().getSimpleName().toLowerCase());
+        int petNumber = Integer.parseInt(howManyPets);
 
         for (int i = 0; i < Integer.parseInt(howManyPets); i++) {
             if (hasMoreThanOnePet == false) {
@@ -32,35 +31,37 @@ public class PetQuestionnaire {
             } else {
                 System.out.println("What kind of other pet do you have?");
             }
-            //String a=  whatKindOfPet.add(in.nextLine());
             String petType = in.nextLine();
             whatKindOfPet.add(petType);
-
-            if (petType.toLowerCase() == cat.getClass().getSimpleName().toLowerCase()) {
-                petSpeak = cat.speak();
-                System.out.println(petSpeak);
-            } else if (petType.toLowerCase() == dog.getClass().getSimpleName().toLowerCase()) {
-                petSpeak = dog.speak();
-            } else if (petType.toLowerCase() == fish.getClass().getSimpleName().toLowerCase()) {
-                petSpeak = fish.speak();
-            }
-
-
             System.out.println("What is your " + whatKindOfPet.get(i) + "'s name?");
-            petName.add(in.nextLine());
+            String petName = in.nextLine();
+            this.petName.add(petName);
+            petClassesWeHaveOptionsOf(petType);
             hasMoreThanOnePet = true;
         }
+        finalOutput(petNumber);
+    }
 
-        if (hasMoreThanOnePet == true) {
-            System.out.print("You have " + howManyPets + " pets");
-            for (int j = 0; j < Integer.parseInt(howManyPets); j++) {
-                System.out.print(", a " + whatKindOfPet.get(j) + " named " + petName.get(j)+petSpeak);
-            }
+    void petClassesWeHaveOptionsOf(String petType) {
+
+        if (petType.toLowerCase().trim().equals(cat.getClass().getSimpleName().toLowerCase().trim())) {
+            petSpeak.add(cat.speak());
+        } else if (petType.toLowerCase().trim().equals(dog.getClass().getSimpleName().toLowerCase().trim())) {
+            petSpeak.add(dog.speak());
+        } else if (petType.toLowerCase().trim().equals(fish.getClass().getSimpleName().toLowerCase().trim())) {
+            petSpeak.add(fish.speak());
         } else {
-            System.out.print("You have a " + whatKindOfPet.get(0) + " named " + petName.get(0));
+            petSpeak.add(pet.speak());
+        }
 
+    }
+
+    void finalOutput(int howManyPets){
+        System.out.print("You have " + howManyPets + " pet(s)");
+        for (int j = 0; j < howManyPets; j++) {
+            System.out.print(", a " + whatKindOfPet.get(j) + " named " + petName.get(j) + " *" + petSpeak.get(j) + "* ");
         }
     }
 
-
 }
+
