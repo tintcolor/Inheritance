@@ -5,12 +5,7 @@ package com.anthony.abstractclass;
  */
 public class Main {
 
-
     public static void main(String[] args) {
         new ATM();
-
-
     }
-
-
 }

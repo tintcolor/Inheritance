@@ -30,6 +30,5 @@ public class ATM {
         accountOptions.chooseSpecificAccount();
         new AccountManager();
 
-
     }
 }

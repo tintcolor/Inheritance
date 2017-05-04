@@ -5,20 +5,15 @@ package com.anthony.abstractclass;
  */
 public abstract class Account {
 
-
     private double currentBalance;
-    private double deposit;
-    private double deduction;
     private String accountHolderName;
 
     CalcBalance calcBalance = new CalcBalance();
-
 
     Account(String accountHolderName, double currentBalance) {
         this.accountHolderName = accountHolderName;
         this.currentBalance = currentBalance;
     }
-
 
     public double getCurrentBalance() {
         return currentBalance;
@@ -28,29 +23,8 @@ public abstract class Account {
         this.currentBalance = currentBalance;
     }
 
-    public double getDeposit() {
-        return deposit;
-    }
-
-    public void setDeposit(double deposit) {
-        this.deposit = deposit;
-    }
-
-    public double getDeduction() {
-        return deduction;
-    }
-
-    public void setDeduction(double deduction) {
-        this.deduction = deduction;
-    }
-
     public String getAccountHolderName() {
         return accountHolderName;
     }
-
-    public void setAccountHolderName(String accountHolderName) {
-        this.accountHolderName = accountHolderName;
-    }
-
 
 }

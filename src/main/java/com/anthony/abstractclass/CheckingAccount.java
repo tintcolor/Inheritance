@@ -9,5 +9,4 @@ public class CheckingAccount extends Account{
         super(accountHolderName, currentBalance);
     }
 
-
 }

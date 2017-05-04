@@ -22,7 +22,6 @@ public class AccountPuller {
 
     }
 
-
     void setSavingsAccountList() {
         savingsAccounts.add(new SavingsAccount("Sam", 300.41));
         savingsAccounts.add(new SavingsAccount("John", 8000.75));

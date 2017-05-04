@@ -5,7 +5,6 @@ package com.anthony.abstractclass;
  */
 public class BusinessAccount extends Account {
 
-
     BusinessAccount(String accountHolderName, double currentBalance) {
         super(accountHolderName, currentBalance);
     }

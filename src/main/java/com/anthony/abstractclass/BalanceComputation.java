@@ -16,7 +16,9 @@ public class BalanceComputation {
             case "1":
                 System.out.println("Please enter the amount you would like to deposit below:");
                 String depositSum = funds.in.nextLine();
+
                 randomAccount.setCurrentBalance(randomAccount.calcBalance.calcDeposit(Double.parseDouble(depositSum), randomAccount.getCurrentBalance()));
+
                 System.out.println("Your balance is now " + randomAccount.getCurrentBalance());
                 computationLoop();
 
@@ -28,7 +30,9 @@ public class BalanceComputation {
                     System.out.println("You only have " + randomAccount.getCurrentBalance() + " in your account.");
                     System.out.println("Please try again");
                 } else {
+
                     randomAccount.setCurrentBalance(randomAccount.calcBalance.calcWithdrawal(Double.parseDouble(deductSum), randomAccount.getCurrentBalance()));
+
                     System.out.printf("Your balance is now $%.2f ", randomAccount.getCurrentBalance());
                 }
                 computationLoop();

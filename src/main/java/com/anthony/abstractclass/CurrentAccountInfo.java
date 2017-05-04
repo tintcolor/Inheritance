@@ -8,7 +8,6 @@ public class CurrentAccountInfo {
     final String currentAccountName;
     final double currentAccountBalance;
 
-
     AccountPuller randomAccount = new AccountPuller();
 
     CurrentAccountInfo(){
