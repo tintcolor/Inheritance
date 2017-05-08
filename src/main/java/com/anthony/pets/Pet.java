@@ -1,12 +1,19 @@
 package com.anthony.pets;
 
+import java.util.Comparator;
+
 /**
  * Created by anthonyjones on 5/4/17.
  */
-public class Pet {
-
+public class Pet implements Comparable<Pet> {
 
     String petName;
+
+    @Override
+    public int compareTo(Pet petName) //"A"
+    {
+        return this.getPetName().compareTo(petName.getPetName());  //a.compareTo("A")
+    }
 
 
     public String speak() {
@@ -21,4 +28,5 @@ public class Pet {
     public void setPetName(String petName) {
         this.petName = petName;
     }
+
 }

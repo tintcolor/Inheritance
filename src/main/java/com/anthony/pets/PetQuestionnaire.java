@@ -1,6 +1,7 @@
 package com.anthony.pets;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -14,9 +15,12 @@ public class PetQuestionnaire {
     Pet pet = new Pet();
     Pet fish = new Fish();
     Scanner in = new Scanner(System.in);
-    ArrayList<String> whatKindOfPet = new ArrayList<>();
+    ArrayList<String> listOfTypesOfPets = new ArrayList<>();
     ArrayList<String> petSpeak = new ArrayList<>();
-    ArrayList<String> petName = new ArrayList<>();
+    ArrayList<String> listOfPetNames = new ArrayList<>();
+    ArrayList<ArrayList> listOfArrays = new ArrayList<>();
+    ArrayList<String> pets = new ArrayList<>();
+
     boolean hasMoreThanOnePet = false;
 
     PetQuestionnaire() {
@@ -32,14 +36,22 @@ public class PetQuestionnaire {
                 System.out.println("What kind of other pet do you have?");
             }
             String petType = in.nextLine();
-            whatKindOfPet.add(petType);
-            System.out.println("What is your " + whatKindOfPet.get(i) + "'s name?");
+            listOfTypesOfPets.add(petType);
+//            pets.add(petType);
+            System.out.println("What is your " + listOfTypesOfPets.get(i) + "'s name?");
             String petName = in.nextLine();
-            this.petName.add(petName);
+            this.listOfPetNames.add(petName);
+            listOfArrays.add(listOfPetNames);
+            pets.add(petType+" "+" "+petName);
             petClassesWeHaveOptionsOf(petType);
             hasMoreThanOnePet = true;
         }
-        finalOutput(petNumber);
+        listOfArrays.add(listOfPetNames);
+        listOfArrays.add(listOfTypesOfPets);
+        listOfArrays.add(petSpeak);
+
+       // finalOutput(petNumber);
+         looper();
     }
 
     void petClassesWeHaveOptionsOf(String petType) {
@@ -56,10 +68,20 @@ public class PetQuestionnaire {
 
     }
 
+
+    void looper(){
+        Collections.sort(pets);
+        System.out.print(pets);
+        for (int j = 0; j < 3; j++) {
+        //    System.out.print(pets);
+        }
+    }
+
     void finalOutput(int howManyPets){
+        Collections.sort(listOfPetNames);
         System.out.print("You have " + howManyPets + " pet(s)");
         for (int j = 0; j < howManyPets; j++) {
-            System.out.print(", a " + whatKindOfPet.get(j) + " named " + petName.get(j) + " *" + petSpeak.get(j) + "* ");
+            System.out.print(", a " + listOfTypesOfPets.get(j) + " named " + listOfPetNames.get(j) + " *" + petSpeak.get(j) + "* ");
         }
     }
 

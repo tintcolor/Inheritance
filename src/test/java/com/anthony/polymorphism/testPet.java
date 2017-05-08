@@ -1,11 +1,16 @@
 package com.anthony.polymorphism;
 
-import com.anthony.pets.Cat;
-import com.anthony.pets.Dog;
-import com.anthony.pets.Fish;
-import com.anthony.pets.Pet;
+import com.anthony.pets.*;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by anthonyjones on 5/3/17.
@@ -83,6 +88,69 @@ public class testPet {
         String actualResponse = fish.getPetName();
         //then
         Assert.assertEquals(expectedResponse, actualResponse);
+    }
+
+    @Test
+    public void testCompareTo() {
+
+        //given
+        Pet pet1 = new Cat();
+        Pet pet2 = new Dog();
+        pet1.setPetName("Ant");
+        pet2.setPetName("Anth");
+        List<Pet> list = new ArrayList<>();
+        list.add(pet2);
+        list.add(pet1);
+        Collections.sort(list);
+        int expectResult = -1;
+        //when
+        int actualResult = pet1.compareTo(pet2);
+
+        //then
+        assertTrue(expectResult == actualResult);
+    }
+
+    @Test
+    public void testComparator() {
+        //give
+        Pet pet1 = new Cat();
+        Pet pet2 = new Dog();
+        CompareNames compareNames = new CompareNames();
+        pet1.setPetName("ant");
+        pet2.setPetName("Anth");
+        List<Pet> list = new ArrayList<>();
+        list.add(pet2);
+        list.add(pet1);
+
+        Collections.sort(list, compareNames);
+
+    }
+
+
+    @Test
+    public void testLetter() {
+        //give
+        Pet pet1 = new Cat();
+        Pet pet2 = new Dog();
+        CompareNames compareNames = new CompareNames();
+        pet1.setPetName("ant");
+        pet2.setPetName("Ant");
+        List<Pet> list = new ArrayList<>();
+        list.add(pet1);//a
+        list.add(pet2);//A
+
+      //  Collections.sort(list);
+
+        int expectResult = -1;
+        //when
+        int actualResult = compareNames.compare(pet1,pet2);//32  a.compareTo(A)
+
+
+        Collections.sort(list, compareNames);
+        System.out.println(actualResult);
+
+        assertTrue(actualResult == 0); //-1<32
+
     }
 
 
