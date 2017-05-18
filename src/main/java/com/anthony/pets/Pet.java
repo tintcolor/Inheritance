@@ -1,6 +1,5 @@
 package com.anthony.pets;
 
-import java.util.Comparator;
 
 /**
  * Created by anthonyjones on 5/4/17.
@@ -8,6 +7,14 @@ import java.util.Comparator;
 public class Pet implements Comparable<Pet> {
 
     String petName;
+    String petType;
+
+    public Pet(){}
+
+    Pet(String petName, String petType) {
+        this.petName = petName;
+        this.petType = petType;
+    }
 
     @Override
     public int compareTo(Pet petName) //"A"
@@ -19,6 +26,8 @@ public class Pet implements Comparable<Pet> {
     public String speak() {
         return "...";
     }
+
+    public String getPetType(){return petType;}
 
 
     public String getPetName() {

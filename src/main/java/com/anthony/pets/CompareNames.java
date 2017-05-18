@@ -10,9 +10,10 @@ public class CompareNames implements Comparator<Pet> {
     @Override
     public int compare(Pet o1, Pet o2) {
 
-        o1.getClass().toString().compareToIgnoreCase(o2.getClass().toString().toLowerCase());
-
-
-        return o1.getPetName().compareToIgnoreCase(o2.getPetName().toLowerCase());
+        o1.getPetType().compareTo(o2.getPetType());
+        if (o1.getPetType().compareTo(o2.getPetType()) == 0) {
+            return o1.getPetName().compareTo(o2.getPetName());
+        }
+        return o1.getPetType().compareTo(o2.getPetType());
     }
 }

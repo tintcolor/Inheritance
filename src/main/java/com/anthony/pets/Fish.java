@@ -5,6 +5,14 @@ package com.anthony.pets;
  */
 public class Fish extends Pet {
 
+    public Fish() {
+    }
+
+    public Fish(String petName, String petType) {
+        super(petName, petType);
+
+    }
+
     @Override
     public String speak() {
         return "BubbleBubble";

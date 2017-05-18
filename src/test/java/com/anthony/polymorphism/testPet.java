@@ -139,9 +139,6 @@ public class testPet {
         list.add(pet1);//a
         list.add(pet2);//A
 
-      //  Collections.sort(list);
-
-        int expectResult = -1;
         //when
         int actualResult = compareNames.compare(pet1,pet2);//32  a.compareTo(A)
 

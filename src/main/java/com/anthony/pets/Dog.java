@@ -5,6 +5,11 @@ package com.anthony.pets;
  */
 public class Dog extends Pet {
 
+    public Dog(){}
+    public Dog(String petName, String petType) {
+        super(petName,petType);
+    }
+
     @Override
     public String speak() {
         return "WoofWoof";
